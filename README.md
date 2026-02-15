@@ -8,7 +8,7 @@ This repo describes the source code of the main E-commerce website, made with No
 
 - Node: 24.11.1
 
-## App Features:
+## App Features
 
 - Homepage
 
@@ -55,7 +55,7 @@ This repo describes the source code of the main E-commerce website, made with No
   - Headers Check
   - Authentication Middlewares
 
-# Como Crear el Contenedor
+## Como Crear el Contenedor
 
 Usando el `Dockerfile` que esta ubicado en el root, ejecuta:
 
@@ -63,9 +63,9 @@ Usando el `Dockerfile` que esta ubicado en el root, ejecuta:
 
 La sintaxis de docker build es:
 
-`docker build -t`
-`-t` significa "tag"
-`peterparts` es el nombre de la imagen
-`.` es la direccion en donde se encuentra el Dockerfile
+- `docker build -t`
+- `-t` significa "tag"
+- `peterparts` es el nombre de la imagen
+- `.` es la direccion en donde se encuentra el Dockerfile
 
 2. `docker run -dp 8080:80 --name peterparts`
