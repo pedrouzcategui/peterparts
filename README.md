@@ -55,17 +55,10 @@ This repo describes the source code of the main E-commerce website, made with No
   - Headers Check
   - Authentication Middlewares
 
-## Como Crear el Contenedor
+## Como levantar la app?
 
-Usando el `Dockerfile` que esta ubicado en el root, ejecuta:
+`docker-compose up -d`
 
-1. `docker build -t peterparts .`
+## Como detener la app?
 
-La sintaxis de docker build es:
-
-- `docker build -t`
-- `-t` significa "tag"
-- `peterparts` es el nombre de la imagen
-- `.` es la direccion en donde se encuentra el Dockerfile
-
-2. `docker run -dp 8080:80 --name peterparts`
+`docker-compose down`
