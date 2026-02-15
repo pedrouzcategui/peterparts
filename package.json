@@ -2,9 +2,13 @@
   "name": "peterparts",
   "version": "1.0.0",
   "description": "Peterparts is an E-commerce that sells Kitchenaid and Cuisinart gears and appliances.",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "tsx watch src/main.ts",
+    "dev:build": "npm run build && concurrently -k -n TSC,NODE -c cyan,green \"tsc -w --preserveWatchOutput\" \"node --watch dist/main.js\""
   },
   "repository": {
     "type": "git",
@@ -13,13 +17,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/pedrouzcategui/peterparts/issues"
   },
   "homepage": "https://github.com/pedrouzcategui/peterparts#readme",
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.3"
   },
   "dependencies": {

@@ -63,3 +63,9 @@ This repo describes the source code of the main E-commerce website, made with No
 
 1. `nvm use`
 2. `npm install`
+
+## Scripts
+
+- Dev (runs TypeScript directly with auto-reload): `npm run dev`
+- Build (transpiles TypeScript to `dist/`): `npm run build`
+- Start (runs compiled JavaScript from `dist/`): `npm start`
