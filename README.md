@@ -54,3 +54,18 @@ This repo describes the source code of the main E-commerce website, made with No
   - Rate Limiting by IP
   - Headers Check
   - Authentication Middlewares
+
+# Como Crear el Contenedor
+
+Usando el `Dockerfile` que esta ubicado en el root, ejecuta:
+
+1. `docker build -t peterparts .`
+
+La sintaxis de docker build es:
+
+`docker build -t`
+`-t` significa "tag"
+`peterparts` es el nombre de la imagen
+`.` es la direccion en donde se encuentra el Dockerfile
+
+2. `docker run -dp 8080:80 --name peterparts`
