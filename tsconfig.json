@@ -4,12 +4,23 @@
     // File Layout
     "rootDir": "./",
     "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@models/*": ["src/models/*"],
+      "@dto/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
+      "@db/*": ["src/db/*"],
+      "@routers/*": ["src/routers/*"]
+    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "target": "esnext",
-    "types": ["node"],
+    "types": ["node", "jest"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -40,7 +51,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "allowImportingTsExtensions": true
-  }
+  },
+  "include": ["src/**/*", "tests"],
+  "exclude": ["node_modules", "dist", "tests", "**/*.test.ts", "**/*.spec.ts"]
 }

@@ -1,6 +1,6 @@
 import express, { type Request, type Response } from "express";
-import productRoutes from "./routers/product.routes.ts";
-import { checkDatabaseConnection } from "./db/prisma.ts";
+import { productRouter } from "@routers/index";
+import { checkDatabaseConnection } from "@db/index";
 
 const app = express();
 const port = 3000;
@@ -11,7 +11,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 
-app.use("/products", productRoutes);
+app.use("/products", productRouter);
 
 app.listen(port, async () => {
   await checkDatabaseConnection();

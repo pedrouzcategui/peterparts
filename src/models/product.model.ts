@@ -1,5 +1,5 @@
 import { type Brand, type Prisma } from "../../generated/prisma/client.ts";
-import prisma from "../db/prisma.ts";
+import prisma from "@db/prisma";
 
 export type CreateProductInput = {
   gearId: string;
