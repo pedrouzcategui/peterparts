@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "jest", "@jest/globals"],
+    "module": "ESNext",
+    "target": "ESNext"
+  },
+  "include": ["**/*.ts", "**/*.test.ts"],
+  "exclude": ["node_modules"]
+}
