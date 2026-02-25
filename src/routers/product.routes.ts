@@ -5,7 +5,7 @@ import {
   getAllProducts,
   getProduct,
   updateExistingProduct,
-} from "../controllers/product.controller.ts";
+} from "@controllers/index";
 
 const router = Router();
 

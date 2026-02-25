@@ -1,5 +1,4 @@
 import type { Request, Response } from "express";
-import { Brand, Prisma } from "../../generated/prisma/client.ts";
 import {
   createProduct,
   deleteProduct,
@@ -7,53 +6,20 @@ import {
   listProducts,
   updateProduct,
   type UpdateProductInput,
-} from "../models/product.model.ts";
+} from "@models/index";
 import {
   type CreateProductDTO,
   type ErrorResponse,
   type ProductDTO,
   type UpdateProductDTO,
-} from "../types/product.dto.ts";
-
-const isBrand = (value: unknown): value is Brand =>
-  value === Brand.Cuisinart || value === Brand.Kitchenaid;
-
-const normalizePrice = (value: unknown): string | number | null => {
-  if (typeof value === "number" && Number.isFinite(value)) {
-    return value;
-  }
-  if (typeof value === "string" && value.trim().length > 0) {
-    return value.trim();
-  }
-  return null;
-};
-
-const normalizeImages = (value: unknown): string[] | null => {
-  if (!Array.isArray(value)) {
-    return null;
-  }
-
-  const images = value.filter((item) => typeof item === "string");
-  return images.length === value.length ? images : null;
-};
-
-const normalizeStock = (value: unknown): number | undefined | null => {
-  if (value === undefined) {
-    return undefined;
-  }
-  if (typeof value === "number" && Number.isFinite(value)) {
-    return Math.trunc(value);
-  }
-  if (typeof value === "string") {
-    const parsed = Number.parseInt(value, 10);
-    return Number.isNaN(parsed) ? null : parsed;
-  }
-  return null;
-};
-
-const isKnownPrismaNotFound = (error: unknown): boolean =>
-  error instanceof Prisma.PrismaClientKnownRequestError &&
-  error.code === "P2025";
+} from "@dto/index";
+import {
+  isBrand,
+  isKnownPrismaNotFound,
+  normalizeImages,
+  normalizePrice,
+  normalizeStock,
+} from "@utils/index";
 
 export const getAllProducts = async (
   req: Request,
