@@ -15,3 +15,19 @@ export const Brand = {
 } as const
 
 export type Brand = (typeof Brand)[keyof typeof Brand]
+
+
+export const Role = {
+  Admin: 'Admin',
+  Customer: 'Customer'
+} as const
+
+export type Role = (typeof Role)[keyof typeof Role]
+
+
+export const AuthProvider = {
+  Google: 'Google',
+  Email: 'Email'
+} as const
+
+export type AuthProvider = (typeof AuthProvider)[keyof typeof AuthProvider]
