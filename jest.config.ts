@@ -12,6 +12,8 @@ const config: Config = {
     "^@utils/(.*)$": "<rootDir>/src/utils/$1",
     "^@db/(.*)$": "<rootDir>/src/db/$1",
     "^@routers/(.*)$": "<rootDir>/src/routers/$1",
+    "^@services/(.*)$": "<rootDir>/src/services/$1",
+    "^@middlewares/(.*)$": "<rootDir>/src/middlewares/$1",
     "^(\\.{1,2}/.*)\\.ts$": "$1",
   },
   transform: {
